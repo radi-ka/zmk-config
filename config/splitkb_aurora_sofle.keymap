@@ -20,8 +20,6 @@
     // chain-length = <29>; // Uncomment if using only per-key LEDs.
 };
 
-&out OUT_BLE
-
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -35,11 +33,11 @@
             //               |CTRL | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   | RALT |
 
             bindings = <
-&kp CARET  &trans  &trans      &trans  &trans     &trans                    &trans  &trans  &trans  &trans  &trans      &trans
-&trans     &kp K   &kp PERIOD  &kp O   &kp COMMA  &kp Y                     &kp V   &kp G   &kp C   &kp L   &de_eszett  &kp Z
-&trans     &kp H   &kp A       &kp E   &kp I      &kp U                     &kp D   &kp T   &kp R   &kp N   &kp S       &kp F
-&trans     &kp X   &kp Q       &de_ae  &de_ue     &de_oe  &trans    &trans  &kp B   &kp P   &kp W   &kp M   &kp J       &trans
-                   &trans      &trans  &trans     &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&kp CARET  &out OUT_TOG  &trans      &trans  &trans     &trans                    &trans  &trans  &trans  &trans  &trans      &trans
+&trans     &kp K         &kp PERIOD  &kp O   &kp COMMA  &kp Y                     &kp V   &kp G   &kp C   &kp L   &de_eszett  &kp Z
+&trans     &kp H         &kp A       &kp E   &kp I      &kp U                     &kp D   &kp T   &kp R   &kp N   &kp S       &kp F
+&trans     &kp X         &kp Q       &de_ae  &de_ue     &de_oe  &trans    &trans  &kp B   &kp P   &kp W   &kp M   &kp J       &trans
+                         &trans      &trans  &trans     &trans  &trans    &trans  &trans  &trans  &trans  &trans
             >;
         };
 
