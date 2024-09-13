@@ -12,12 +12,16 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 
-#include "zmk-helpers/unicode-chars/german.dtsi"
+#include "zmk-helpers/unicode-chars/german_alt.dtsi"
+
+#define lower 0
+#define upper 1
+#define three 2
+#define nav 3
+#define gaming 4
 
 &led_strip {
-    // chain-length = <6>;
-    chain-length = <35>; // Uncomment if using both per-key and underglow LEDs
-    // chain-length = <29>; // Uncomment if using only per-key LEDs.
+    chain-length = <35>;
 };
 
 / {
@@ -25,19 +29,12 @@
         compatible = "zmk,keymap";
 
         lower_case {
-            // ------------------------------------------------------------------------------------------------------------
-            // |  ESC  |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   `   |
-            // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   -   |
-            // |  CTRL |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
-            // | SHIFT |  Z  |  X  |  C   |  V   |  B   |   "["  |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
-            //               |CTRL | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   | RALT |
-
             bindings = <
-&kp CARET  &out OUT_TOG  &bt BT_CLR      &bt BT_NXT  &trans     &bt BT_SEL 0                   &trans  &trans  &trans  &trans  &trans      &trans
-&trans     &kp K         &kp PERIOD  &kp O   &kp COMMA  &kp Y                     &kp V   &kp G   &kp C   &kp L   &de_eszett  &kp Z
-&trans     &kp H         &kp A       &kp E   &kp I      &kp U                     &kp D   &kp T   &kp R   &kp N   &kp S       &kp F
-&trans     &kp X         &kp Q       &de_ae  &de_ue     &de_oe  &trans    &trans  &kp B   &kp P   &kp W   &kp M   &kp J       &trans
-                         &trans      &trans  &trans     &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&kp CARET      &out OUT_TOG  &bt BT_CLR     &bt BT_NXT  &trans     &bt BT_SEL 0                         &trans  &trans  &trans  &trans  &trans      &trans
+&kp K_COPY     &kp K         &kp PERIOD     &kp O       &kp COMMA  &kp Y                                &kp V   &kp G   &kp C   &kp L   &de_eszett  &kp Z
+&kp K_CUT      &kp H         &kp A          &kp E       &kp I      &kp U                                &kp D   &kp T   &kp R   &kp N   &kp S       &kp F
+&kp K_PASTE    &kp X         &kp Q          &de_ae      &de_ue     &de_oe         &trans        &trans  &kp B   &kp P   &kp W   &kp M   &kp J       &to upper
+                             &kp LCTRL      &to three   &ENTER     &lt nav SPACE  &to gaming    &trans  &trans  &trans  &trans  &trans
             >;
         };
 
@@ -46,52 +43,38 @@
 &kp CARET  &trans  &trans      &trans  &trans     &trans                    &trans  &trans  &trans  &trans  &trans      &trans
 &trans     &kp K   &kp PERIOD  &kp O   &kp COMMA  &kp Y                     &kp V   &kp G   &kp C   &kp L   &de_eszett  &kp Z
 &trans     &kp H   &kp A       &kp E   &kp I      &kp U                     &kp D   &kp T   &kp R   &kp N   &kp S       &kp F
-&trans     &kp X   &kp Q       &de_ae  &de_ue     &de_oe  &trans    &trans  &kp B   &kp P   &kp W   &kp M   &kp J       &trans
-                   &trans      &trans  &trans     &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans     &kp X   &kp Q       &de_ae  &de_ue     &de_oe  &trans    &trans  &kp B   &kp P   &kp W   &kp M   &kp J       &to lower
+                   &trans      &to three  &ENTER     &lt nav SPACE  &trans    &trans  &trans  &trans  &trans  &trans
             >;
         };
 
         layer_3 {
-            // ------------------------------------------------------------------------------------------------------------
-            // | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |                   |      |       |       |      |       |       |
-            // |  F1   |  F2 |  F3 |  F4  |  F5  |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |  F12  |
-            // |   `   |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   ~   |
-            // |       |     |     |      |      |      |        |  |       |      |  _    |  +    |  {   |   }   |  "|"  |
-            //               |     |      |      |      |        |  |       |      |       |       |      |
-
             bindings = <
 &trans  &trans         &trans          &trans            &trans             &trans                          &trans           &trans                &trans                 &trans     &trans         &trans
 &trans  &trans         &kp UNDERSCORE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp CARET                       &kp EXCLAMATION  &kp LESS_THAN         &kp GREATER_THAN       &kp EQUAL  &kp AMPERSAND  &trans
 &trans  &kp BACKSLASH  &kp SLASH       &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp ASTERISK                    &kp QUESTION     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS  &kp COLON      &kp AT_SIGN
-&trans  &kp HASH       &kp DOLLAR      &kp PIPE          &kp TILDE          &kp GRAVE     &trans    &trans  &kp PLUS         &kp PERCENT           &kp DOUBLE_QUOTES      &kp SQT    &kp SEMICOLON  &trans
-                       &trans          &trans            &trans             &trans        &trans    &trans  &trans           &trans                &trans                 &trans
+&trans  &kp HASH       &kp DOLLAR      &kp PIPE          &kp TILDE          &kp GRAVE     &trans    &trans  &kp PLUS         &kp PERCENT           &kp DOUBLE_QUOTES      &kp SQT    &kp SEMICOLON  &to lower
+                       &trans          &to three  &ENTER     &lt nav SPACE        &trans    &trans  &trans           &trans                &trans                 &trans
             >;
         };
 
         nav_layer {
-            // ------------------------------------------------------------------------------------------------------------
-            // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
-            // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |   7   |   8   |  9   |   0   |       |
-            // |   F1  |  F2 |  F3 |  F4  |  F5  |  F6  |                   |      |   <-  |   v   |  ^   |  ->   |       |
-            // |   F7  |  F8 |  F9 |  F10 |  F11 |  F12 |        |  |       |  +   |   -   |   =   |  [   |   ]   |   \   |
-            //               |     |      |      |      |        |  |       |      |       |       |      |
-
             bindings = <
-&trans  &trans       &trans         &trans          &trans      &trans                           &trans  &trans  &kp SLASH   &kp ASTERISK  &kp MINUS  &trans
-&trans  &kp PAGE_UP  &kp BACKSPACE  &kp UP_ARROW    &kp DELETE  &kp PAGE_DOWN                    &trans  &kp N7  &kp N8      &kp N9        &kp PLUS   &trans
-&trans  &kp HOME     &kp LEFT       &kp DOWN_ARROW  &kp RIGHT   &kp END                          &trans  &kp N4  &kp N5      &kp N6        &trans     &trans
-&trans  &trans       &trans         &trans          &trans      &trans         &trans    &trans  &none   &kp N1  &kp N2      &kp N3        &trans     &trans
-                     &trans         &trans          &trans      &trans         &trans    &trans  &trans  &kp N0  &kp PERIOD  &kp COMMA
+&trans  &trans       &trans         &trans          &trans      &trans                             &trans  &trans  &kp SLASH   &kp ASTERISK  &kp MINUS  &trans
+&trans  &kp PAGE_UP  &kp BACKSPACE  &kp UP_ARROW    &kp DELETE  &kp PAGE_DOWN                      &trans  &kp N7  &kp N8      &kp N9        &kp PLUS   &trans
+&trans  &kp HOME     &kp LEFT       &kp DOWN_ARROW  &kp RIGHT   &kp END                            &trans  &kp N4  &kp N5      &kp N6        &trans     &trans
+&trans  &trans       &trans         &trans          &trans      &trans           &trans    &trans  &none   &kp N1  &kp N2      &kp N3        &trans     &to lower
+                     &trans         &to three       &ENTER      &lt nav SPACE    &trans    &trans  &trans  &kp N0  &kp PERIOD  &kp COMMA
             >;
         };
 
         gaming {
             bindings = <
-&trans   &kp N1     &kp N2    &kp N3    &kp N4     &kp N5                    &trans  &trans  &kp SLASH   &kp ASTERISK  &kp MINUS  &trans
-&kp TAB  &kp N6     &kp N7    &kp N8    &kp N9     &kp N0                    &trans  &kp N7  &kp N8      &kp N9        &kp PLUS   &trans
-&trans   &kp CARET  &kp LEFT  &kp UP    &kp RIGHT  &kp F                     &trans  &kp N4  &kp N5      &kp N6        &trans     &trans
-&trans   &kp Y      &kp X     &kp DOWN  &kp V      &kp B   &trans    &trans  &none   &kp N1  &kp N2      &kp N3        &trans     &trans
-                    &trans    &trans    &trans     &trans  &trans    &trans  &trans  &kp N0  &kp PERIOD  &kp COMMA
+&trans   &kp N1     &kp N2    &kp N3    &kp N4     &kp N5                           &trans  &trans  &kp SLASH   &kp ASTERISK  &kp MINUS  &trans
+&kp TAB  &kp N6     &kp N7    &kp N8    &kp N9     &kp N0                           &trans  &kp N7  &kp N8      &kp N9        &kp PLUS   &trans
+&trans   &kp CARET  &kp LEFT  &kp UP    &kp RIGHT  &kp F                            &trans  &kp N4  &kp N5      &kp N6        &trans     &trans
+&trans   &kp Y      &kp X     &kp DOWN  &kp V      &kp B          &trans    &trans  &none   &kp N1  &kp N2      &kp N3        &trans     &to lower
+                    &trans    &none     &ENTER     &lt nav SPACE  &trans    &trans  &trans  &kp N0  &kp PERIOD  &kp COMMA
             >;
         };
     };
