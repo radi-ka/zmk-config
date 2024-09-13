@@ -33,6 +33,16 @@
                tapping-term-ms = <200>;
                bindings = <&kp LC(INS)>, <&kp LC(X)>;
            };
+           
+           hm: homerow_mods {
+               compatible = "zmk,behavior-hold-tap";
+               #binding-cells = <2>;
+               tapping-term-ms = <150>;
+               quick-tap-ms = <0>;
+               flavor = "tap-preferred";
+               bindings = <&kp>, <&kp>;
+           };
+               
        };
        
     keymap {
@@ -40,7 +50,7 @@
 
         lower_case {
             bindings = <
-&ht_tp ESCAPE CARET  &out OUT_TOG  &bt BT_CLR     &bt BT_NXT  &trans        &bt BT_SEL 0                             &trans  &trans  &trans  &trans  &trans      &trans
+&hm ESCAPE CARET  &out OUT_TOG  &bt BT_CLR     &bt BT_NXT  &trans        &bt BT_SEL 0                             &trans  &trans  &trans  &trans  &trans      &trans
 &copy_cut       &kp K         &kp PERIOD    &kp O       &kp COMMA       &kp Y                                    &kp V   &kp G   &kp C   &kp L   &de_eszett  &kp Z
 &kp LS(INS)     &kp H         &kp A      &kp E       &kp I           &kp U                                    &kp D   &kp T   &kp R   &kp N   &kp S       &kp F
 &kp LCTRL       &kp X         &kp Q     &de_ae      &de_ue          &de_oe         &trans        &trans      &kp B   &kp P   &kp W   &kp M   &kp J       &to upper
