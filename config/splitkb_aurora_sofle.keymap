@@ -34,7 +34,7 @@
                compatible = "zmk,behavior-tap-dance";
                #binding-cells = <0>;
                tapping-term-ms = <200>;
-               bindings = <&kp LC(INS)>, <&kp LC(X)>;
+               bindings = <&kp LC(INS)>, <&kp LS(INS)>, <&kp LC(X)>;
            };
            
            mo_tog: behavior_mo_tog { // momentary-layer-on-hold/toggle-layer-on-tap
@@ -55,7 +55,7 @@
            };
                
        };
-       
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -63,7 +63,7 @@
             bindings = <
 &hm ESCAPE CARET  &out OUT_TOG  &bt BT_CLR     &bt BT_NXT  &trans        &bt BT_SEL 0                             &trans  &trans  &trans  &trans  &trans      &trans
 &copy_cut         &kp K         &kp PERIOD    &kp O       &kp COMMA       &kp Y                                    &kp V   &kp G   &kp C   &kp L   &de_eszett  &kp Z
-&kp LCTRL         &kp H         &kp A      &kp E       &hm LS(INS) I           &kp U                                    &kp D   &kp T   &kp R   &kp N   &kp S       &kp F
+&kp LCTRL         &kp H         &kp A      &kp E       &kp I           &kp U                                    &kp D   &kp T   &kp R   &kp N   &kp S       &kp F
 MO_TOG(upper)     &kp X         &kp Q     &de_ae      &de_ue          &de_oe         &trans        &trans      &kp B   &kp P   &kp W   &kp M   &kp J       &mo upper
                                 &trans    &trans      &lt three ENTER &lt nav SPACE  &kp TAB          &to gaming  &lt nav SPACE  &lt three ENTER  &trans  &trans
             >;
