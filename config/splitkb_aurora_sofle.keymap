@@ -25,12 +25,16 @@
     chain-length = <35>;
 };
 
-ZMK_TAP_DANCE(copy_cut, tap_dance,
-    tapping-term-ms = <200>;
-    bindings = <&kp LC(INS)>, <&kp LC(X)>;
-)
-
 / {
+    behaviors {
+           copy_cut: td_copy_cut {
+               compatible = "zmk,behavior-tap-dance";
+               #binding-cells = <0>;
+               tapping-term-ms = <200>;
+               bindings = <&kp LC(INS)>, <&kp LC(X)>;
+           };
+       };
+       
     keymap {
         compatible = "zmk,keymap";
 
@@ -40,7 +44,7 @@ ZMK_TAP_DANCE(copy_cut, tap_dance,
 &copy_cut       &kp K         &kp PERIOD    &kp O       &kp COMMA       &kp Y                                    &kp V   &kp G   &kp C   &kp L   &de_eszett  &kp Z
 &kp LS(INS)     &kp H         &kp A      &kp E       &kp I           &kp U                                    &kp D   &kp T   &kp R   &kp N   &kp S       &kp F
 &kp LCTRL       &kp X         &kp Q     &de_ae      &de_ue          &de_oe         &trans        &trans      &kp B   &kp P   &kp W   &kp M   &kp J       &to upper
-                              &trans    &trans      &lt three ENTER &lt nav SPACE  &TAB          &to gaming  &trans  &trans  &trans  &trans
+                              &trans    &trans      &lt three ENTER &lt nav SPACE  &TAB          &to gaming  &lt nav SPACE  &lt three ENTER  &trans  &trans
             >;
         };
 
