@@ -3,7 +3,7 @@
  *
  * SPDX-License-Identifier: MIT
  */
-
+#define HOST_OS 1
 #include "zmk-helpers/helper.h"
 
 #include <behaviors.dtsi>
@@ -30,21 +30,21 @@
 
         lower_case {
             bindings = <
-&kp CARET      &out OUT_TOG  &bt BT_CLR     &bt BT_NXT  &trans        &bt BT_SEL 0                         &trans  &trans  &trans  &trans  &trans      &trans
-&kp K_COPY     &kp K         &kp PERIOD     &kp O       &kp COMMA     &kp Y                                &kp V   &kp G   &kp C   &kp L   &de_eszett  &kp Z
-&kp K_CUT      &kp H         &kp A          &kp E       &kp I         &kp U                                &kp D   &kp T   &kp R   &kp N   &kp S       &kp F
-&kp K_PASTE    &kp X         &kp Q          &de_ae      &de_ue        &de_oe         &trans        &trans  &kp B   &kp P   &kp W   &kp M   &kp J       &to upper
-                             &kp LCTRL      &to three   &kp ENTER     &lt nav SPACE  &to gaming    &trans  &trans  &trans  &trans  &trans
+&mt ESCAPE CARET      &out OUT_TOG  &bt BT_CLR     &bt BT_NXT  &trans        &bt BT_SEL 0                         &trans  &trans  &trans  &trans  &trans      &trans
+&kp C_AC_COPY     &kp K         &kp PERIOD      &kp O       &kp COMMA     &kp Y                                &kp V   &kp G   &kp C   &kp L   &de_eszett  &kp Z
+&kp C_AC_CUT      &kp H         &kp A           &kp E       &kp I         &kp U                                &kp D   &kp T   &kp R   &kp N   &kp S       &kp F
+&kp LCTRL         &kp X         &kp Q           &de_ae      &de_ue        &de_oe         &trans        &trans  &kp B   &kp P   &kp W   &kp M   &kp J       &to upper
+                                &kp C_AC_PASTE  &to three   &kp ENTER     &lt nav SPACE  &to gaming    &trans  &trans  &trans  &trans  &trans
             >;
         };
 
         upper_case {
             bindings = <
-&kp CARET  &trans  &trans      &trans  &trans           &trans                           &trans  &trans  &trans  &trans  &trans      &trans
-&trans     &kp K   &kp PERIOD  &kp O   &kp COMMA        &kp Y                            &kp V   &kp G   &kp C   &kp L   &de_eszett  &kp Z
-&trans     &kp H   &kp A       &kp E   &kp I            &kp U                            &kp D   &kp T   &kp R   &kp N   &kp S       &kp F
-&trans     &kp X   &kp Q       &de_ae  &de_ue           &de_oe         &trans    &trans  &kp B   &kp P   &kp W   &kp M   &kp J       &to lower
-                   &trans      &to three  &kp ENTER     &lt nav SPACE  &trans    &trans  &trans  &trans  &trans  &trans
+&kp CARET  &trans      &trans          &trans      &trans       &trans                           &trans      &trans      &trans      &trans      &trans      &trans
+&trans     &kp LS(K)   &kp PERIOD      &kp LS(O)   &kp COMMA    &kp LS(Y)                        &kp LS(V)   &kp LS(G)   &kp LS(C)   &kp LS(L)   &de_eszett  &kp LS(Z)
+&trans     &kp LS(H)   &kp LS(A)       &kp LS(E)   &kp LS(I)    &kp LS(U)                        &kp LS(D)   &kp LS(T)   &kp LS(R)   &kp LS(N)   &kp LS(S)     &kp LS(F)
+&trans     &kp LS(X)   &kp LS(Q)       &de_ae      &de_ue       &de_oe         &trans    &trans  &kp LS(B)   &kp LS(P)   &kp LS(W)   &kp LS(M)   &kp LS(J)   &to lower
+                       &trans          &to three   &kp ENTER    &lt nav SPACE  &trans    &trans  &trans      &trans      &trans      &trans
             >;
         };
 
