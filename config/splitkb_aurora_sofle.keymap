@@ -19,6 +19,8 @@
     // chain-length = <29>; // Uncomment if using only per-key LEDs.
 };
 
+&out OUT_BLE
+
 / {
     keymap {
         compatible = "zmk,keymap";
