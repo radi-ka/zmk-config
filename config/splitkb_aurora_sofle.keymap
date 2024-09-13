@@ -12,7 +12,7 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 
-#include "zmk-helpers/unicode-chars/german_alt.dtsi"
+#include "zmk-helpers/unicode-chars/german.dtsi"
 
 #define lower 0
 #define upper 1
@@ -24,17 +24,22 @@
     chain-length = <35>;
 };
 
+ZMK_TAP_DANCE(copy_cut, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp LC(INS)>, <&kp LC(X)>;
+)
+
 / {
     keymap {
         compatible = "zmk,keymap";
 
         lower_case {
             bindings = <
-&mt ESCAPE CARET      &out OUT_TOG  &bt BT_CLR     &bt BT_NXT  &trans        &bt BT_SEL 0                         &trans  &trans  &trans  &trans  &trans      &trans
-&kp C_AC_COPY     &kp K         &kp PERIOD      &kp O       &kp COMMA     &kp Y                                &kp V   &kp G   &kp C   &kp L   &de_eszett  &kp Z
-&kp C_AC_CUT      &kp H         &kp A           &kp E       &kp I         &kp U                                &kp D   &kp T   &kp R   &kp N   &kp S       &kp F
-&kp LCTRL         &kp X         &kp Q           &de_ae      &de_ue        &de_oe         &trans        &trans  &kp B   &kp P   &kp W   &kp M   &kp J       &to upper
-                                &kp C_AC_PASTE  &to three   &kp ENTER     &lt nav SPACE  &to gaming    &trans  &trans  &trans  &trans  &trans
+&ht_tp ESCAPE CARET  &out OUT_TOG  &bt BT_CLR     &bt BT_NXT  &trans        &bt BT_SEL 0                             &trans  &trans  &trans  &trans  &trans      &trans
+&copy_cut       &kp K         &kp PERIOD    &kp O       &kp COMMA       &kp Y                                    &kp V   &kp G   &kp C   &kp L   &de_eszett  &kp Z
+&kp LS(INS)     &kp H         &kp A      &kp E       &kp I           &kp U                                    &kp D   &kp T   &kp R   &kp N   &kp S       &kp F
+&kp LCTRL       &kp X         &kp Q     &de_ae      &de_ue          &de_oe         &trans        &trans      &kp B   &kp P   &kp W   &kp M   &kp J       &to upper
+                              &trans    &trans      &lt three ENTER &lt nav SPACE  &TAB          &to gaming  &trans  &trans  &trans  &trans
             >;
         };
 
@@ -44,7 +49,7 @@
 &trans     &kp LS(K)   &kp PERIOD      &kp LS(O)   &kp COMMA    &kp LS(Y)                        &kp LS(V)   &kp LS(G)   &kp LS(C)   &kp LS(L)   &de_eszett  &kp LS(Z)
 &trans     &kp LS(H)   &kp LS(A)       &kp LS(E)   &kp LS(I)    &kp LS(U)                        &kp LS(D)   &kp LS(T)   &kp LS(R)   &kp LS(N)   &kp LS(S)     &kp LS(F)
 &trans     &kp LS(X)   &kp LS(Q)       &de_ae      &de_ue       &de_oe         &trans    &trans  &kp LS(B)   &kp LS(P)   &kp LS(W)   &kp LS(M)   &kp LS(J)   &to lower
-                       &trans          &to three   &kp ENTER    &lt nav SPACE  &trans    &trans  &trans      &trans      &trans      &trans
+                       &trans          &trans      &lt three ENTER    &lt nav SPACE  &trans    &trans  &trans      &trans      &trans      &trans
             >;
         };
 
@@ -54,17 +59,17 @@
 &trans  &trans         &kp UNDERSCORE  &kp LEFT_BRACKET   &kp RIGHT_BRACKET  &kp CARET                              &kp EXCLAMATION  &kp LESS_THAN         &kp GREATER_THAN       &kp EQUAL  &kp AMPERSAND  &trans
 &trans  &kp BACKSLASH  &kp SLASH       &kp LEFT_BRACE     &kp RIGHT_BRACE    &kp ASTERISK                           &kp QUESTION     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS  &kp COLON      &kp AT_SIGN
 &trans  &kp HASH       &kp DOLLAR      &kp PIPE           &kp TILDE          &kp GRAVE            &trans    &trans  &kp PLUS         &kp PERCENT           &kp DOUBLE_QUOTES      &kp SQT    &kp SEMICOLON  &to lower
-                       &trans          &to three          &kp ENTER          &lt nav SPACE        &trans    &trans  &trans           &trans                &trans                 &trans
+                       &trans          &trans             &lt three ENTER    &lt nav SPACE        &trans    &trans  &trans           &trans                &trans                 &trans
             >;
         };
 
         nav_layer {
             bindings = <
-&trans  &trans       &trans         &trans          &trans         &trans                             &trans  &trans  &kp SLASH   &kp ASTERISK  &kp MINUS  &trans
-&trans  &kp PAGE_UP  &kp BACKSPACE  &kp UP_ARROW    &kp DELETE     &kp PAGE_DOWN                      &trans  &kp N7  &kp N8      &kp N9        &kp PLUS   &trans
-&trans  &kp HOME     &kp LEFT       &kp DOWN_ARROW  &kp RIGHT      &kp END                            &trans  &kp N4  &kp N5      &kp N6        &trans     &trans
-&trans  &trans       &trans         &trans          &trans         &trans           &trans    &trans  &none   &kp N1  &kp N2      &kp N3        &trans     &to lower
-                     &trans         &to three       &kp ENTER      &lt nav SPACE    &trans    &trans  &trans  &kp N0  &kp PERIOD  &kp COMMA
+&trans  &trans       &trans         &trans           &trans          &trans                             &trans  &trans  &kp SLASH   &kp ASTERISK  &kp MINUS  &trans
+&trans  &kp PAGE_UP  &kp BACKSPACE  &trans           &kp DELETE      &kp PAGE_DOWN                      &trans  &kp N7  &kp N8      &kp N9        &kp PLUS   &trans
+&trans  &kp HOME     &kp LEFT       &kp UP_ARROW     &kp RIGHT       &kp END                            &trans  &kp N4  &kp N5      &kp N6        &trans     &trans
+&trans  &trans       &trans         &kp DOWN_ARROW   &trans          &trans           &trans    &trans  &none   &kp N1  &kp N2      &kp N3        &trans     &to lower
+                     &trans         &trans           &lt three ENTER &lt nav SPACE    &trans    &trans  &trans  &kp N0  &kp PERIOD  &kp COMMA
             >;
         };
 
