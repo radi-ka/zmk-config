@@ -100,11 +100,11 @@ MO_TOG(upper)     &kp X         &kp Q     &de_ae      &de_ue          &de_oe    
 
         gaming {
             bindings = <
-&M   &kp F1     &kp F2    &kp F3    &kp F4        &kp F5                           &trans  &trans  &trans   &trans  &trans  &trans
-&kp TAB  &kp CARET  &kp N2    &kp N3    &kp N4        &kp N5                           &kp Y  &trans &trans &trans &trans   &trans
-&trans   &kp N1     &kp LEFT  &kp UP    &kp RIGHT     &kp F                            &kp H  &trans &trans &trans  &trans   &trans
-&trans   &kp Y      &kp X     &kp DOWN  &kp V         &kp B          &trans    &trans  &kp I   &trans &trans &trans  &trans   &to lower
-                    &none    &none     &kp ENTER     &kp SPACE  &trans    &trans  &trans  &kp N0  &kp PERIOD  &kp COMMA
+&kp M    &kp F1     &kp F2    &kp F3    &kp F4        &kp F5                           &trans  &trans  &trans      &trans  &trans   &trans
+&kp TAB  &kp CARET  &kp N2    &kp N3    &kp N4        &kp N5                           &kp Y   &trans  &trans      &trans  &trans   &trans
+&trans   &kp N1     &kp LEFT  &kp UP    &kp RIGHT     &kp F                            &kp H   &trans  &trans      &trans  &trans   &trans
+&trans   &kp Y      &kp X     &kp DOWN  &kp V         &kp B          &trans    &trans  &kp I   &trans  &trans      &trans  &trans   &to lower
+                    &none     &none     &kp ENTER     &kp SPACE      &trans    &trans  &trans  &kp N0  &kp PERIOD  &kp COMMA
             >;
         };
     };
