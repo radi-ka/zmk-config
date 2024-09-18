@@ -61,11 +61,11 @@
 
         lower_case {
             bindings = <
-&hm ESCAPE CARET  &kp F1        &kp F2        &kp F3      &kp F4          &kp F5                                   &trans  &trans  &trans  &trans  &trans      &to ops
+&hm ESCAPE CARET  &kp F1        &kp F2        &kp F3      &kp F4          &kp F5                                   &kp F6  &kp F7  &kp F8  &kp F9  &kp F10     &to ops
 &copy_cut         &kp K         &kp PERIOD    &kp O       &kp COMMA       &kp Y                                    &kp V   &kp G   &kp C   &kp L   &de_eszett  &kp Z
 &kp LCTRL         &kp H         &kp A         &kp E       &kp I           &kp U                                    &kp D   &kp T   &kp R   &kp N   &kp S       &kp F
 MO_TOG(upper)     &kp X         &kp Q         &de_ae      &de_ue          &de_oe         &trans        &trans      &kp B   &kp P   &kp W   &kp M   &kp J       &mo upper
-                                &kp LSHIFT    &kp LGUI      &lt three LGUI  &lt nav SPACE  &kp TAB       &none       &lt nav ENTER  &lt three  LGUI  &trans  &to gaming
+                                &kp LSHIFT    &kp LGUI    &lt three LGUI  &lt nav SPACE  &kp TAB       &none       &lt nav ENTER  &lt three  LGUI  &kp LALT  &to gaming
             >;
         };
 
