@@ -13,7 +13,7 @@
 #define HOST_OS 1
 #include "zmk-helpers/helper.h"
 
-#include "zmk-helpers/unicode-chars/german.dtsi"
+#include "keys_de.h"
 
 #define lower 0
 #define upper 1
@@ -61,20 +61,20 @@
 
         lower_case {
             bindings = <
-&hm ESCAPE CARET  &kp F1        &kp F2        &kp F3      &kp F4          &kp F5                                   &kp F6  &kp F7  &kp F8  &kp F9  &kp F10     &to ops
-&copy_cut         &kp K         &kp PERIOD    &kp O       &kp COMMA       &kp Y                                    &kp V   &kp G   &kp C   &kp L   &de_eszett  &kp Z
+&hm ESCAPE DE_CARET  &kp F1        &kp F2        &kp F3      &kp F4          &kp F5                                   &kp F6  &kp F7  &kp F8  &kp F9  &kp F10     &to ops
+&copy_cut         &kp K         &kp DE_PERIOD    &kp O       &kp DE_COMMA       &kp DE_Y                                    &kp V   &kp G   &kp C   &kp L   &kp DE_SHARP_S  &kp DE_Z
 &kp LCTRL         &kp H         &kp A         &kp E       &kp I           &kp U                                    &kp D   &kp T   &kp R   &kp N   &kp S       &kp F
-MO_TOG(upper)     &kp X         &kp Q         &de_ae      &de_ue          &de_oe         &trans        &trans      &kp B   &kp P   &kp W   &kp M   &kp J       &mo upper
+MO_TOG(upper)     &kp X         &kp Q         &kp DE_A_UMLAUT      &kp DE_U_UMLAUT          &kp DE_O_UMLAUT         &trans        &trans      &kp B   &kp P   &kp W   &kp M   &kp J       &mo upper
                                 &kp LSHIFT    &kp LGUI    &lt three LGUI  &lt nav SPACE  &kp TAB       &none       &lt nav ENTER  &lt three  LGUI  &kp LALT  &to gaming
             >;
         };
 
         upper_case {
             bindings = <
-&kp CARET  &trans      &trans          &trans      &trans       &trans                           &trans      &trans      &trans      &trans      &trans      &trans
-&trans     &kp LS(K)   &kp PERIOD      &kp LS(O)   &kp COMMA    &kp LS(Y)                        &kp LS(V)   &kp LS(G)   &kp LS(C)   &kp LS(L)   &de_eszett  &kp LS(Z)
+&kp DE_CARET  &trans      &trans          &trans      &trans       &trans                           &trans      &trans      &trans      &trans      &trans      &trans
+&trans     &kp LS(K)   &kp DE_PERIOD      &kp LS(O)   &kp DE_COMMA    &kp LS(DE_Y)                        &kp LS(V)   &kp LS(G)   &kp LS(C)   &kp LS(L)   &de_eszett  &kp LS(DE_Z)
 &trans     &kp LS(H)   &kp LS(A)       &kp LS(E)   &kp LS(I)    &kp LS(U)                        &kp LS(D)   &kp LS(T)   &kp LS(R)   &kp LS(N)   &kp LS(S)     &kp LS(F)
-&trans     &kp LS(X)   &kp LS(Q)       &de_ae      &de_ue       &de_oe      &trans    &trans     &kp LS(B)   &kp LS(P)   &kp LS(W)   &kp LS(M)   &kp LS(J)   &to lower
+&trans     &kp LS(X)   &kp LS(Q)       &kp LS(DE_A_UMLAUT)      &kp LS(DE_U_UMLAUT)       &kp LS(DE_O_UMLAUT)      &trans    &trans     &kp LS(B)   &kp LS(P)   &kp LS(W)   &kp LS(M)   &kp LS(J)   &to lower
                        &trans          &trans      &trans       &trans      &trans    &trans     &trans      &trans      &trans      &trans
             >;
         };
@@ -82,29 +82,29 @@ MO_TOG(upper)     &kp X         &kp Q         &de_ae      &de_ue          &de_oe
         layer_3 {
             bindings = <
 &trans  &trans         &trans          &trans             &trans             &trans                                 &trans           &trans                &trans                 &trans     &trans         &trans
-&trans  &trans         &kp UNDERSCORE  &kp LEFT_BRACKET   &kp RIGHT_BRACKET  &kp CARET                              &kp EXCLAMATION  &kp LESS_THAN         &kp GREATER_THAN       &kp EQUAL  &kp AMPERSAND  &trans
-&trans  &kp BACKSLASH  &kp SLASH       &kp LEFT_BRACE     &kp RIGHT_BRACE    &kp ASTERISK                           &kp QUESTION     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS  &kp COLON      &kp AT_SIGN
-&trans  &kp HASH       &kp DOLLAR      &kp PIPE           &kp TILDE          &kp GRAVE      &trans    &trans    &kp PLUS         &kp PERCENT           &kp DOUBLE_QUOTES      &kp SQT    &kp SEMICOLON  &to lower
+&trans  &trans         &kp UNDERSCORE  &kp DE_LEFT_BRACKET   &kp DE_RIGHT_BRACKET  &kp DE_CARET                              &kp DE_EXCLAMATION  &kp DE_LESS_THAN         &kp DE_GREATER_THAN       &kp DE_EQUAL  &kp DE_AMPERSAND  &trans
+&trans  &kp BACKSLASH  &kp SLASH       &kp DE_LEFT_BRACE     &kp DE_RIGHT_BRACE    &kp DE_ASTERISK                           &kp DE_QUESTION     &kp DE_LEFT_PARENTHESIS  &kp DE_RIGHT_PARENTHESIS  &kp DE_MINUS  &kp DE_COLON      &kp DE_AT_SIGN
+&trans  &kp DE_HASH       &kp DOLLAR      &kp DE_PIPE           &kp DE_TILDE          &kp DE_GRAVE      &trans    &trans    &kp DE_PLUS         &kp DE_PERCENT           &kp DE_DOUBLE_QUOTES      &kp DE_SQT    &kp DE_SEMICOLON  &to lower
                        &trans          &trans             &trans             &trans         &trans    &trans    &trans           &trans                &trans                 &trans
             >;
         };
 
         nav_layer {
             bindings = <
-&trans  &trans       &trans         &trans           &trans          &trans                             &trans  &trans  &kp SLASH   &kp ASTERISK  &kp MINUS  &trans
-&trans  &kp PAGE_UP  &kp BACKSPACE  &none            &kp DELETE      &kp PAGE_DOWN                      &trans  &kp N7  &kp N8      &kp N9        &kp PLUS   &trans
+&trans  &trans       &trans         &trans           &trans          &trans                             &trans  &trans  &kp DE_SLASH   &kp DE_ASTERISK  &kp DE_MINUS  &trans
+&trans  &kp PAGE_UP  &kp BACKSPACE  &none            &kp DELETE      &kp PAGE_DOWN                      &trans  &kp N7  &kp N8      &kp N9        &kp DE_PLUS   &trans
 &trans  &kp HOME     &kp LEFT       &kp UP_ARROW     &kp RIGHT       &kp END                            &trans  &kp N4  &kp N5      &kp N6        &trans     &trans
 &trans  &trans       &trans         &kp DOWN_ARROW   &trans          &trans           &trans    &trans  &none   &kp N1  &kp N2      &kp N3        &trans     &to lower
-                     &trans         &trans           &lt three ENTER &lt nav SPACE    &trans    &trans  &trans  &kp N0  &kp PERIOD  &kp COMMA
+                     &trans         &trans           &lt three ENTER &lt nav SPACE    &trans    &trans  &trans  &kp N0  &kp DE_PERIOD  &kp DE_COMMA
             >;
         };
 
         gaming {
             bindings = <
 &hm ESC M    &kp F1     &kp F2    &kp F3    &kp F4        &kp F5                           &trans  &trans  &trans      &trans  &trans   &trans
-&kp TAB  &kp CARET  &kp N2    &kp N3    &kp N4        &kp N5                           &kp Y   &trans  &trans      &trans  &trans   &trans
+&kp TAB  &kp DE_CARET  &kp N2    &kp N3    &kp N4        &kp N5                           &kp DE_Y   &trans  &trans      &trans  &trans   &trans
 &trans   &kp N1     &kp LEFT  &kp UP    &kp RIGHT     &kp F                            &kp H   &trans  &trans      &trans  &trans   &trans
-&trans   &kp Y      &kp X     &kp DOWN  &kp V         &kp B          &trans    &trans  &kp I   &trans  &trans      &trans  &trans   &to lower
+&trans   &kp DE_Y      &kp X     &kp DOWN  &kp V         &kp B          &trans    &trans  &kp I   &trans  &trans      &trans  &trans   &to lower
                     &none     &none     &kp ENTER     &kp SPACE      &trans    &trans  &trans  &kp N0  &kp PERIOD  &kp COMMA
             >;
         };
