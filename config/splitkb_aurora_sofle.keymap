@@ -73,7 +73,7 @@ MO_TOG(upper)     &kp X         &kp Q         &kp DE_A_UMLAUT      &kp DE_U_UMLA
         upper_case {
             bindings = <
 &kp DE_CARET  &trans      &trans          &trans      &trans       &trans                           &trans      &trans      &trans      &trans      &trans      &trans
-&trans     &kp LS(K)   &kp DE_PERIOD      &kp LS(O)   &kp DE_COMMA    &kp LS(DE_Y)                        &kp LS(V)   &kp LS(G)   &kp LS(C)   &kp LS(L)   &KP DE_SHARP_S  &kp LS(DE_Z)
+&trans     &kp LS(K)   &kp DE_PERIOD      &kp LS(O)   &kp DE_COMMA    &kp LS(DE_Y)                        &kp LS(V)   &kp LS(G)   &kp LS(C)   &kp LS(L)   &kp DE_SHARP_S  &kp LS(DE_Z)
 &trans     &kp LS(H)   &kp LS(A)       &kp LS(E)   &kp LS(I)    &kp LS(U)                        &kp LS(D)   &kp LS(T)   &kp LS(R)   &kp LS(N)   &kp LS(S)     &kp LS(F)
 &trans     &kp LS(X)   &kp LS(Q)       &kp LS(DE_A_UMLAUT)      &kp LS(DE_U_UMLAUT)       &kp LS(DE_O_UMLAUT)      &trans    &trans     &kp LS(B)   &kp LS(P)   &kp LS(W)   &kp LS(M)   &kp LS(J)   &to lower
                        &trans          &trans      &trans       &trans      &trans    &trans     &trans      &trans      &trans      &trans
