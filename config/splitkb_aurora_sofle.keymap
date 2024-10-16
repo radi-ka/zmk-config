@@ -113,7 +113,7 @@ MO_TOG(upper)     &kp X         &kp Q         &kp DE_A_UMLAUT      &kp DE_U_UMLA
                 operations {
                     bindings = <
         &hm ESCAPE CARET  &out OUT_TOG  &bt BT_CLR    &bt BT_NXT  &trans        &bt BT_SEL 0                             &trans  &trans  &trans  &trans  &trans      &trans
-        &copy_cut         &kp K         &kp PERIOD    &kp O       &kp COMMA       &kp Y                                    &kp V   &kp G   &kp C   &kp L   &de_eszett  &kp Z
+        &copy_cut         &kp K         &kp PERIOD    &kp O       &kp COMMA       &kp Y                                    &kp V   &kp G   &kp C   &kp L   &kp DE_SHARP_S  &kp Z
         &kp LCTRL         &kp H         &kp A         &kp E       &kp I           &kp U                                    &kp D   &kp T   &kp R   &kp N   &kp S       &kp F
         MO_TOG(upper)     &kp X         &kp Q         &de_ae      &de_ue          &de_oe         &trans        &trans      &kp B   &kp P   &kp W   &kp M   &kp J       &to lower
                                         &kp LSHIFT    &trans      &lt three LGUI &lt nav SPACE  &kp TAB          &to gaming  &lt nav ENTER  &lt three  LGUI  &trans  &trans
