@@ -83,8 +83,8 @@ MO_TOG(upper)     &kp X         &kp Q         &kp DE_A_UMLAUT      &kp DE_U_UMLA
         layer_3 {
             bindings = <
 &trans  &trans         &trans          &trans             &trans             &trans                                 &trans           &trans                &trans                 &trans     &trans         &trans
-&trans  &trans         &kp UNDERSCORE  &kp DE_LEFT_BRACKET   &kp DE_RIGHT_BRACKET  &kp DE_CARET                              &kp DE_EXCLAMATION  &kp DE_LESS_THAN         &kp DE_GREATER_THAN       &kp DE_EQUAL  &kp DE_AMPERSAND  &trans
-&trans  &kp BACKSLASH  &kp SLASH       &kp DE_LEFT_BRACE     &kp DE_RIGHT_BRACE    &kp DE_ASTERISK                           &kp DE_QUESTION     &kp DE_LEFT_PARENTHESIS  &kp DE_RIGHT_PARENTHESIS  &kp DE_MINUS  &kp DE_COLON      &kp DE_AT_SIGN
+&trans  &trans         &kp DE_UNDERSCORE  &kp DE_LEFT_BRACKET   &kp DE_RIGHT_BRACKET  &kp DE_CARET                              &kp DE_EXCLAMATION  &kp DE_LESS_THAN         &kp DE_GREATER_THAN       &kp DE_EQUAL  &kp DE_AMPERSAND  &trans
+&trans  &kp DE_BACKSLASH  &kp DE_SLASH       &kp DE_LEFT_BRACE     &kp DE_RIGHT_BRACE    &kp DE_ASTERISK                           &kp DE_QUESTION     &kp DE_LEFT_PARENTHESIS  &kp DE_RIGHT_PARENTHESIS  &kp DE_MINUS  &kp DE_COLON      &kp DE_AT_SIGN
 &trans  &kp DE_HASH       &kp DOLLAR      &kp DE_PIPE           &kp DE_TILDE          &kp DE_GRAVE      &trans    &trans    &kp DE_PLUS         &kp DE_PERCENT           &kp DE_DOUBLE_QUOTES      &kp DE_SQT    &kp DE_SEMICOLON  &to lower
                        &trans          &trans             &trans             &trans         &trans    &trans    &trans           &trans                &trans                 &trans
             >;
